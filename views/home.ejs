@@ -3,17 +3,14 @@
 <h1>Hello !!</h1>
 <p><%= value %></p>
 
-  <% for (var i = 0; i < datas.length; i++) { %>
-     <h2><%= datas[i].title %></h2>
-     <p>
-       <%= datas[i].content.substring(0, 100) %> ...
-      <a href="/posts/<%= datas[i].title %>">Read more</a>
-     </p>
-  <% } %>
-<!-- instead of a for loop we can also use the forEach() function
-    datas.forEach(function (data) {
-      data.title;
-      data.content;
-    });-->
+    <%  posts.forEach(function(post){ %>
+
+    <h1><%=post.title%></h1>
+    <p>
+    <%=post.content.substring(0, 100) + " ..."%>
+    <a href="/posts/<%=post._id%>">Read More</a>
+    </p>
+
+    <% }) %>
 
 <%- include("partials/footer"); -%>
